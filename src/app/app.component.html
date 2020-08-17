@@ -1,0 +1,105 @@
+<button>Click Me</button>
+<h1>Angular Service(Get Data)</h1>
+<h2>https://api.covid19india.org/v2/state_district_wise.json</h2>
+<table>
+    <tr>
+        <th>State</th>
+        <th>State Code</th>
+        <th>District</th>
+        <th>Active</th>
+        <th>Confirmed</th>
+        <th>Deaths</th>
+        <th>Recovered</th>
+        <th>Delta Confirmed</th>
+        <th>Delta Deceased</th>
+        <th>Delta Recovered</th>
+    </tr>
+    <ng-container *ngFor= 'let d3 of data4'>
+    <tr *ngFor = 'let dis of d3.districtData'>
+        <td>{{d3.state}}</td>
+        <td>{{d3.statecode}}</td>
+        <td>{{dis.district}}</td>
+        <td>{{dis.active}}</td>
+        <td>{{dis.confirmed}}</td>
+        <td>{{dis.deceased}}</td>
+        <td>{{dis.recovered}}</td>
+        <td>{{dis.delta.confirmed}}</td>
+        <td>{{dis.delta.deceased}}</td>
+        <td>{{dis.delta.recovered}}</td>
+    </tr>
+</ng-container>
+</table>
+<hr>
+<h1>Angular Get Method (Service)</h1>
+<h2>https://jsonplaceholder.typicode.com/users</h2>
+<hr>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>UserName</th>
+        <th>Email</th>
+        <th>Street</th>
+        <th>Suite</th>
+        <th>City</th>
+        <th>Zipcode</th>
+        <th>Lat</th>
+        <th>Lang</th>
+        <th>Phone</th>
+        <th>Website</th>
+        <th>Name</th>
+        <th>CatchPhrase</th>
+        <th>Bs</th>
+    </tr>
+    <tr *ngFor="let d of data">
+        <td>{{d.id}}</td>
+        <td>{{d.name}}</td>
+        <td>{{d.username}}</td>
+        <td>{{d.email}}</td>
+        <td>{{d.address.street}}</td>
+        <td>{{d.address.suite}}</td>
+        <td>{{d.address.city}}</td>
+        <td>{{d.address.zipcode}}</td>
+        <td>{{d.address.geo.lat}}</td>
+        <td>{{d.address.geo.lng}}</td>
+        <td>{{d.phone}}</td>
+        <td>{{d.website}}</td>
+        <td>{{d.company.name}}</td>
+        <td>{{d.company.catchPhrase}}</td>
+        <td>{{d.company.bs}}</td>
+       
+    </tr>
+</table>
+<hr><h1>Angular Service</h1><h2>https://jsonplaceholder.typicode.com/todos</h2><hr>
+<table >
+    <tr>
+        <th>User ID</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Completed</th>
+    </tr>
+    <tr *ngFor="let d1 of data1"  style="height: 50px;">
+        <td>{{d1.userId}}</td>
+        <td>{{d1.id}}</td>
+        <td>{{d1.title}}</td>
+        <td>{{d1.completed}}</td>
+    </tr>
+</table>
+<hr><h1>Angular Service</h1><h2>https://jsonplaceholder.typicode.com/photos</h2><hr>
+<table>
+    <tr>
+        <th>Album ID</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>URL</th>
+        <th>Thumb Nail URL</th>
+        
+    </tr>
+    <tr *ngFor="let d2 of data2">
+        <td>{{d2.albumId}}</td>
+        <td>{{d2.id}}</td>
+        <td>{{d2.title}}</td>
+        <td>{{d2.url}}</td>
+        <td>{{d2.thumbnailUrl}}</td>
+    </tr>
+</table>
